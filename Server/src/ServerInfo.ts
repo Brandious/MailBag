@@ -5,7 +5,8 @@ export interface IServerInfo
 {
     smtp: {
         host: string, port: number,
-        auth: {user: string, pass: string}
+        auth: {user: string, pass: string},
+        secure: boolean
     },
     imap: {
         host: string, port: number,

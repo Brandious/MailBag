@@ -17,6 +17,7 @@ export class Worker
     {
         return new Promise((res, rej) => {
             const transport: Mail = nodemailer.createTransport(Worker._serverInfo.smtp);
+            console.log(options);
             transport.sendMail(options, (Error: Error | null, Info: SentMessageInfo) => {
                 if(Error)
                     rej(Error);

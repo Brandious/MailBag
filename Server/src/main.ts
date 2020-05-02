@@ -13,6 +13,8 @@ app.use(express.json());
 
 app.use("/", express.static(path.join(__dirname, "../../client/dist")));
 
+
+
 app.use((req: Request, res: Response, next: NextFunction) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
@@ -84,10 +86,11 @@ app.delete("/messages/:mailbox/:id", async (req: Request, res: Response) => {
 app.post("/messages", async(req: Request, res: Response) => {
     try {
         const smtpWorker: SMTP.Worker = new SMTP.Worker(serverInfo);
+        //console.log(req.body);
         await smtpWorker.sendMessage(req.body);
         res.send("Message had been succesfully sent!!!");
     } catch (err) {
-        res.send("Error" + err);
+        res.send("Error: " + err);
     }
 });
 
@@ -124,4 +127,9 @@ app.delete("/contacts/:id", async(req: Request, res: Response) => {
     } catch (err) {
         res.send("Error" + err);
     }
+})
+
+
+app.listen("3000", () => {
+    console.log("Server is running on port: 3000" )
 })
