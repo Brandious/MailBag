@@ -1,2 +1,2 @@
 # MailBag
-MailBag application built on Node,React stack
+MailBag Application built by *Brandious*
