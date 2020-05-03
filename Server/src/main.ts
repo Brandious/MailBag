@@ -11,7 +11,7 @@ import {IContact} from './contacts';
 const app: Express = express();
 app.use(express.json());
 
-app.use("/", express.static(path.join(__dirname, "../../client/dist")));
+app.use("/", express.static(path.join(__dirname, "../../Client/dist")));
 
 
 
@@ -130,6 +130,6 @@ app.delete("/contacts/:id", async(req: Request, res: Response) => {
 })
 
 
-app.listen("3000", () => {
-    console.log("Server is running on port: 3000" )
+app.listen("8000", () => {
+    console.log("Server is running on port: 8000" )
 })
