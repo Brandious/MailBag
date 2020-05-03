@@ -13,7 +13,7 @@ const Toolbar = ({state}) => (
         <Button variant="contained" color="primary" size="small" style={{marginRight: 10}} onClick={ state.showAddContact }>
                 <ContactMail style={{marginRight: 10}}/>New Contact
         </Button>
-        <h1>{config.userEmail}</h1>
+        {/* <h1>{config.userEmail}</h1> */}
     </div>
 )
 
